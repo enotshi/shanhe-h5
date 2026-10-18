@@ -176,37 +176,22 @@ resizeTouchTargets();
 updateOnScroll();
 
 
-// 第07部分：横屏默认展开，竖屏默认折叠。
-// 用户仍可手动点击；旋转屏幕后按新方向重新设置。
-const recapMap = document.querySelector("details.route-recap");
+// 第07部分：将折叠容器改为普通容器，所有设备始终显示。
+const recapDetails = document.querySelector("details.route-recap");
 
-if (recapMap) {
-  const landscapeScreen = window.matchMedia(
-    "(orientation: landscape)"
-  );
+if (recapDetails) {
+  const staticMap = document.createElement("div");
+  staticMap.className = recapDetails.className;
 
-  function syncRecapMap() {
-    recapMap.open = landscapeScreen.matches;
+  const heading = document.createElement("div");
+  heading.className = "recap-static-heading";
+  heading.textContent = "两条道路，一幅山河";
+  staticMap.append(heading);
+
+  const content = recapDetails.querySelector(".route-recap-content");
+  if (content) {
+    staticMap.append(content);
   }
 
-  function syncRecapLabel() {
-    const label = recapMap.querySelector(".recap-toggle");
-
-    if (label) {
-      label.textContent = recapMap.open
-        ? "收起路线总览"
-        : "展开路线总览";
-    }
-  }
-
-  recapMap.addEventListener("toggle", syncRecapLabel);
-
-  if (landscapeScreen.addEventListener) {
-    landscapeScreen.addEventListener("change", syncRecapMap);
-  } else {
-    landscapeScreen.addListener(syncRecapMap);
-  }
-
-  syncRecapMap();
-  syncRecapLabel();
+  recapDetails.replaceWith(staticMap);
 }
