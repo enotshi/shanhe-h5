@@ -174,3 +174,39 @@ if (siteConfig.author || siteConfig.affiliation) {
 }
 resizeTouchTargets();
 updateOnScroll();
+
+
+// 第07部分：横屏默认展开，竖屏默认折叠。
+// 用户仍可手动点击；旋转屏幕后按新方向重新设置。
+const recapMap = document.querySelector("details.route-recap");
+
+if (recapMap) {
+  const landscapeScreen = window.matchMedia(
+    "(orientation: landscape)"
+  );
+
+  function syncRecapMap() {
+    recapMap.open = landscapeScreen.matches;
+  }
+
+  function syncRecapLabel() {
+    const label = recapMap.querySelector(".recap-toggle");
+
+    if (label) {
+      label.textContent = recapMap.open
+        ? "收起路线总览"
+        : "展开路线总览";
+    }
+  }
+
+  recapMap.addEventListener("toggle", syncRecapLabel);
+
+  if (landscapeScreen.addEventListener) {
+    landscapeScreen.addEventListener("change", syncRecapMap);
+  } else {
+    landscapeScreen.addListener(syncRecapMap);
+  }
+
+  syncRecapMap();
+  syncRecapLabel();
+}

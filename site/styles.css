@@ -348,3 +348,21 @@
     font-size: 20px;
   }
 }
+
+/* 补齐当前页面文字的书法字体 */
+@font-face {
+  font-family: ShanheBrushV2;
+  src: url("./assets/fonts/shanhe-brush-v2.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.hero h1,
+.hero-subtitle,
+.chapter h2,
+.outro h2,
+.news-copy h2 {
+  font-family: ShanheBrushV2, var(--serif);
+  font-weight: 400;
+}
