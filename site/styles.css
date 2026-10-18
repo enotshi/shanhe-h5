@@ -35,3 +35,316 @@
 .motif-star {
   display: none !important;
 }
+
+
+/* ===== 首页：地图、纸纹与暗红色背景 ===== */
+
+.hero {
+  isolation: isolate;
+  background: #f4eddf;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 92% 18%,
+      rgba(139, 35, 43, .21),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 70% 88%,
+      rgba(173, 126, 57, .18),
+      transparent 48%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(88, 61, 37, .025) 0 1px,
+      transparent 1px 5px
+    ),
+    linear-gradient(115deg, #fbf7ee 12%, #f2e7d7 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 92px 26px 26px;
+  z-index: 0;
+  border: 1px solid rgba(139, 35, 43, .15);
+  pointer-events: none;
+}
+
+.hero-art {
+  z-index: 1;
+  opacity: .48;
+}
+
+.hero-art::after {
+  background: linear-gradient(
+    90deg,
+    #f8f2e7 0%,
+    rgba(248, 242, 231, .7) 22%,
+    transparent 68%
+  );
+}
+
+.hero-copy {
+  z-index: 2;
+}
+
+.hero-side,
+.hero-bottom {
+  z-index: 2;
+}
+
+.hero h1 {
+  color: #7d2025;
+  text-shadow: 0 5px 24px rgba(125, 32, 37, .08);
+}
+
+.start-link {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+/* ===== 各阶段标题：沿用首页书法字体 ===== */
+
+.chapter h2,
+.outro h2,
+.news-copy h2 {
+  font-family: ShanheBrush, var(--serif);
+  font-weight: 400;
+  font-size: clamp(34px, 3.4vw, 48px);
+  line-height: 1.5;
+  letter-spacing: .025em;
+  color: #84272d;
+}
+
+.chapter[data-tone="west"] h2 {
+  color: #795124;
+}
+
+/* ===== 07：先读正文，再展开地图 ===== */
+
+.outro-layout {
+  align-items: start;
+}
+
+.outro-map-wrap.route-recap {
+  order: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 650px;
+  margin: 0;
+  align-self: start;
+  border: 1px solid #d3b9a8;
+  background: #f0e6d8;
+}
+
+.route-recap > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.route-recap > summary::-webkit-details-marker {
+  display: none;
+}
+
+.route-recap summary small {
+  display: block;
+  color: var(--red);
+  font-size: 11px;
+  letter-spacing: .15em;
+}
+
+.route-recap summary strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.recap-toggle {
+  flex-shrink: 0;
+  color: var(--red);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.recap-toggle::after {
+  content: " ＋";
+}
+
+.route-recap[open] .recap-toggle::after {
+  content: " −";
+}
+
+.route-recap-content {
+  padding: 0 16px 16px;
+}
+
+.route-recap-content .outro-map {
+  height: auto;
+}
+
+/* ===== 故事卡片：明确显示可以点击 ===== */
+
+.story-card {
+  margin: 28px 0;
+  border: 1px solid #d4b4a6;
+  border-left: 3px solid var(--red);
+  background: #f2e7da;
+}
+
+.story-card > summary {
+  position: relative;
+  padding: 19px 48px 19px 20px;
+  cursor: pointer;
+  list-style: none;
+  color: #8c292e;
+  transition: background .2s, color .2s;
+}
+
+.story-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.story-card > summary::after {
+  content: "＋";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+.story-card[open] > summary::after {
+  content: "−";
+}
+
+.story-card > summary:hover,
+.story-card[open] > summary {
+  background: #8c292e;
+  color: #fff8ed;
+}
+
+.story-card summary small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .1em;
+  margin-bottom: 5px;
+}
+
+.story-card summary strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.story-card summary .story-hint {
+  display: inline-block;
+  margin-top: 9px;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.story-card[open] .story-hint {
+  display: none;
+}
+
+.story-content {
+  padding: 22px 20px;
+}
+
+.story-content p {
+  margin: 0 0 15px;
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+.story-content p:last-child {
+  margin-bottom: 0;
+}
+
+.story-content a {
+  display: inline-block;
+  color: var(--red);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* 平板和手机：取消地图前置，并缩短06→07的间距 */
+@media (max-width: 1023px) {
+  #P6 {
+    padding-bottom: 30px;
+  }
+
+  .outro {
+    padding-top: 34px;
+  }
+
+  .outro-layout {
+    gap: 28px;
+  }
+
+  .outro-map-wrap.route-recap {
+    order: 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero::after {
+    inset: 82px 12px 18px;
+  }
+
+  .hero-art {
+    top: auto;
+    bottom: 25px;
+    right: -35vw;
+    width: 135vw;
+    opacity: .28;
+  }
+
+  .hero-intro {
+    color: #443a33;
+  }
+
+  .chapter h2,
+  .outro h2,
+  .news-copy h2 {
+    font-size: 34px;
+    line-height: 1.5;
+  }
+
+  .route-recap > summary {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+
+  .route-recap summary strong {
+    font-size: 19px;
+  }
+
+  .recap-toggle {
+    font-size: 11px;
+  }
+
+  .story-card summary strong {
+    font-size: 20px;
+  }
+}
