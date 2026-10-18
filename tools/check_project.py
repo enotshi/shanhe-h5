@@ -36,13 +36,16 @@ for tag,key,ref in doc.refs:
     elif key=='src': errors.append(f'Unexpected external runtime resource {ref}')
 for file in SITE.glob('*.js'):
     for dep in re.findall(r"(?:from\s+|import\s*)['\"]([^'\"]+)['\"]",file.read_text()):
-        if not (file.parent/dep).is_file(): errors.append(f'Broken module {dep}')
+        # URL query strings and fragments are not part of the local filename.
+        dep_path=unquote(urlsplit(dep).path)
+        if not (file.parent/dep_path).is_file(): errors.append(f'Broken module {dep}')
 for file in (SITE/'assets').glob('*.svg'):
     try: ET.parse(file)
     except ET.ParseError as e: errors.append(f'Invalid SVG {file}: {e}')
 css=(SITE/'styles.css').read_text()
 for ref in re.findall(r'url\([\'"]?([^\)\'\"]+)',css):
-    if not (SITE/ref).is_file(): errors.append(f'Missing CSS asset {ref}')
+    asset_path=unquote(urlsplit(ref).path)
+    if not (SITE/asset_path).is_file(): errors.append(f'Missing CSS asset {ref}')
 for needed in ['.github/workflows/pages.yml','README.md','THIRD_PARTY_NOTICES.md','site/assets/fonts/OFL.txt']:
     if not (ROOT/needed).is_file(): errors.append(f'Missing deliverable {needed}')
 font=SITE/'assets/fonts/shanhe-serif-subset.woff2'
