@@ -1,0 +1,13 @@
+{
+  "name": "shanhe-h5",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "从长征路到西迁路：无构建依赖的静态路线叙事网页",
+  "scripts": {
+    "start": "python -m http.server 8000 --directory site --bind 127.0.0.1",
+    "check": "python tools/check_project.py",
+    "test:dom": "node tools/check_interactions.mjs"
+  },
+  "devDependencies": {"linkedom": "0.18.13"}
+}

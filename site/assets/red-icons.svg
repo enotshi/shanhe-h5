@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<symbol id="star" viewBox="0 0 64 64"><path d="m32 4 8.2 17.7 19.3 2.4-14.2 13.3 3.8 19.1L32 47l-17.1 9.5 3.8-19.1L4.5 24.1l19.3-2.4Z" fill="currentColor"/></symbol>
+<symbol id="flag" viewBox="0 0 64 64"><path d="M12 58V8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M14 10c14-9 24 11 39 1v29c-15 10-25-10-39-1Z" fill="currentColor"/><path d="m28 17 2.2 4.9 5.3.6-3.9 3.7 1 5.3L28 29l-4.6 2.5 1-5.3-3.9-3.7 5.3-.6Z" fill="#f6f2e9"/></symbol>
+<symbol id="train" viewBox="0 0 64 64"><path d="M15 10h34v36H15Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M21 18h22v14H21Zm-7 36 9-8m27 8-9-8M25 7h14" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="23" cy="39" r="3" fill="currentColor"/><circle cx="41" cy="39" r="3" fill="currentColor"/></symbol>
+<symbol id="book" viewBox="0 0 64 64"><path d="M32 16C24 9 15 8 7 10v39c9-2 17-1 25 6 8-7 16-8 25-6V10c-8-2-17-1-25 6Zm0 0v39M14 21c5 0 9 1 13 4M14 31c5 0 9 1 13 4m10-10c4-3 8-4 13-4M37 35c4-3 8-4 13-4" fill="none" stroke="currentColor" stroke-width="2.5"/></symbol>
+<symbol id="letter" viewBox="0 0 64 64"><path d="M7 15h50v35H7Zm0 0 25 20 25-20M7 50l17-20m33 20L40 30" fill="none" stroke="currentColor" stroke-width="2.5"/></symbol>
+</svg>

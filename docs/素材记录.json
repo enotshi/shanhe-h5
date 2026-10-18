@@ -1,0 +1,27 @@
+{
+  "retrieved_at": "2026-10-18",
+  "administrative_data_source": "https://raw.githubusercontent.com/Supeset/China-GeoData/main/geojson/china_province_full.geojson",
+  "notes": "照片未作裁切或像素编辑；opening原下载URL扩展名png，但实际JPEG，按文件格式保存为jpg。",
+  "files": {
+    "tools/data/provinces.json": {
+      "bytes": 582522,
+      "sha256": "99adfeded5223848bbe37a0a12f8023e11ee12161c7800521c27db42fdeac275"
+    },
+    "site/assets/photos/ticket-1956.jpg": {
+      "bytes": 124446,
+      "sha256": "564b8a7898796073f11947cf51234abf06bab5b602ea8baf52c4f8de87032f1f"
+    },
+    "site/assets/photos/departure-1956.jpeg": {
+      "bytes": 15561,
+      "sha256": "a6af649f79322f9481b7d9e6a79833c1bb9ff0bc936549fd321fe8d7393ac7eb"
+    },
+    "site/assets/photos/opening-1956.jpg": {
+      "bytes": 23146,
+      "sha256": "ad6bf9389c3b5a58e6c4591645e7b9961a9e68a3c65b7847c200838cb62dbd8a"
+    },
+    "site/assets/photos/walk-2026.png": {
+      "bytes": 557366,
+      "sha256": "e0f4b91e0bad6c023393a30ada050c4e8b3a71ef19325213bdd0a89ac474761d"
+    }
+  }
+}

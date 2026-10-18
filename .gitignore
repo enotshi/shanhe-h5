@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.venv/
+.idea/
+.vscode/
+node_modules/
+*.zip
+output/
+*.otf
+*.ttf
+!site/assets/fonts/*.woff2
